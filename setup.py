@@ -1,15 +1,14 @@
 from setuptools import find_packages, setup
 
 setup(
-    name="duckdb-demo",
+    name="pandas-demo",
     version="1.0.0",
     packages=find_packages(where="src"),
     package_dir={"": "src"},
-    install_requires=["boto3~=1.16", "duckdb~=0.2"],
+    install_requires=["boto3~=1.16", "pandas~=1.2.4", "PyArrow~=4.0"],
     entry_points={
         "console_scripts": [
-            "duckdemo-download=duckdemo.download:main",
-            "duckdemo-products=duckdemo.products:main",
+            "dataset-download=pandasdemo.download:main",
         ]
     },
 )
