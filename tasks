@@ -6,24 +6,22 @@ for command in "$@"
 do
   echo "--- ${command} ---"
   case "${command}" in
-    test)
-        tox -e py38
-        ;;
     format)
-        tox -e format
+        pipenv run format-import
+        pipenv run format
         ;;
     check-format)
-        tox -e check-format
+        pipenv run check-format
         ;;
     lint)
-        tox -e flake8
-        tox -e bandit
+        pipenv run lint-flake8
+        pipenv run lint-bandit
         ;;
     typecheck)
-        tox -e mypy
+        pipenv run typecheck
         ;;
     check-deps)
-        tox -e check-deps
+        pipenv check
         ;;
     validate)
         ./tasks check-format typecheck lint test
@@ -38,7 +36,7 @@ do
         rm -rf build/ dist/ .pytest_cache/
         ;;
     devenv)
-        tox --recreate --devenv venv -e dev
+        pipenv install
         ;;
     *)
         echo "Invalid command: '${command}'"

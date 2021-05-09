@@ -1,0 +1,35 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+pandas-demo = {editable = true, path = "."}
+pandas = ">=1.2.4"
+pyarrow = ">=4.0"
+jupyterlab = ">=3.0"
+matplotlib = ">=3.4"
+
+[dev-packages]
+bandit = "~=1.6"
+black = "==21.5b0"
+flake8 = "~=3.0"
+flake8-bugbear="~=20.0"
+flake8-comprehensions="~=3.0"
+flake8-builtins="~=1.0"
+flake8-print="~=3.0"
+mccabe="~=0.6"
+mypy = "*"
+pyfakefs = "~=3.7"
+isort = "~=5.6"
+
+[requires]
+python_version = "3.9"
+
+[scripts]
+format-import = "isort src/ setup.py"
+format = "black -t py38 -l100 src/ setup.py"
+check-format = "black --check -t py38 -l100 src/ setup.py"
+typecheck = "mypy --ignore-missing-imports src/"
+lint-flake8 = "flake8 src/ setup.py"
+lint-bandit = "bandit -r src/"

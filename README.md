@@ -4,28 +4,41 @@ This is to aid in a talk and live-demo around Python/Pandas/data analysis, assum
 
 ## Setup
 
-Requires Python 3 to be installed. You can check by running `python --version`. [pyenv](https://github.com/pyenv/pyenv) can be used for Python version management.
+### Prerequisites
 
-We will use a python virtual environment to create a self contained collection
+- Requires Python 3.9 to be installed. You can check which version you have by running `python --version`.
+  - [pyenv](https://github.com/pyenv/pyenv) can be used for Python version management.
+- Also required [pipenv](https://pipenv.pypa.io/en/latest/#install-pipenv-today), used for python package management
+
+### Virtual environment
+
+- We will use a python virtual environment to create a self contained collection
 of the dependencies needed for this workshop.
 
-Create a virtual environment, install dependencies, and activate it:
+To create a virtual environment, install dependencies, and activate it, run:
 
-```
+```sh
 ./tasks devenv
-source ./venv/bin/activate
+pipenv shell
 ```
 
 The following Python packages will be installed:
 
-- [Pandas](https://pandas.pydata.org/docs/) - the main focus of this workshop
+- [Pandas](https://pandas.pydata.org/docs/) - the main focus of this workshop.
 - [Boto3](https://pypi.org/project/boto3/) - provides us with interface to Amazon
   Web Services. We will be using this to fetch datasets from S3.
 - [PyArrow](https://pypi.org/project/pyarrow/) - used to read parquet files.
+- [JupyterLab](https://jupyter.org/install) - used to start the Jupyter server.
+- [Matplotlib](https://pypi.org/project/matplotlib/) - used to create data visualisations in Python
 
 To deactivate the virtual environment:
 ```sh
 (venv)$ deactivate
+```
+
+To remove the virtual environment and clear cache, run:
+```sh
+pipenv --rm && pipenv --clear
 ```
 
 ## Downloading datasets
@@ -41,21 +54,22 @@ Using the [table of product categories](product_categories.md), select a
 product category and run the downloader. For example, to download reviews of
 only digital videos, run:
 
-```
+```sh
 dataset-download path/to/download --product-category Digital_Video_Download
 ```
 
 However, if you wish to download the full 50GB dataset, simply omit a product
 category.
 
-```
+```sh
 dataset-download path/to/download
 ```
 
 ## Jupyter and Pandas
 
-To start the Jupyter server:
-```
+To start the Jupyter server, run:
+
+```sh
 jupyter-lab
 ```
 
@@ -63,7 +77,7 @@ jupyter-lab
 
 In order to run the demo notebook, or to play around with pandas, do the following steps:
 
-1. Ensure you have Python 3 installed, and activate your virtual environment by following the [Setup steps](##Step up)
+1. Ensure you have Python 3.9 installed, and activate your virtual environment by following the [Setup steps](#setup)
 2. The demo notebook uses Digital_Video_Download data (by running `dataset-download data/review_data --product-category Digital_Video_Download`)
 3. Start the Jupyter server by running `jupyter-lab`
 4. Open up the `notebooks/template.pynb` file in the web browser, and you can start to do your own analysis
