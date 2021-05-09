@@ -81,6 +81,7 @@ In order to run the demo notebook, or to play around with pandas, do the followi
 2. The demo notebook uses Digital_Video_Download data (by running `dataset-download data/review_data --product-category Digital_Video_Download`)
 3. Start the Jupyter server by running `jupyter-lab`
 4. Open up the `notebooks/template.pynb` file in the web browser, and you can start to do your own analysis
+  - Or have a look at `demo.ipynb` which is the completed analysis done as part of the live demo.
 
 ### Credits
 
