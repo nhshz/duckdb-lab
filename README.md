@@ -80,9 +80,10 @@ In order to run the demo notebook, or to play around with pandas, do the followi
 1. Ensure you have Python 3.9 installed, and activate your virtual environment by following the [Setup steps](#setup)
 2. The demo notebook uses Digital_Video_Download data (by running `dataset-download data/review_data --product-category Digital_Video_Download`)
 3. Start the Jupyter server by running `jupyter-lab`
-4. Open up the `notebooks/template.pynb` file in the web browser, and you can start to do your own analysis
-  - Or have a look at `demo.ipynb` which is the completed analysis done as part of the live demo.
+4. Open up the `notebooks/demo.pynb` file in the web browser, and you can start to do your own analysis
+  - Or have a look at [`demo-completed.ipynb`](./notebooks/demo-completed.ipynb) which is the completed analysis done as part of the live demo.
+  - There is also [`other-insights.ipynb`](./notebooks/other-insights.ipynb) which is further analysis done on the dataset.
 
 ### Credits
 
-Thanks to @jfgreen-nhs for contributions to the live demo material.
+Thanks to @jfgreen-nhs and @RKJa for contributions to the live demo material.
